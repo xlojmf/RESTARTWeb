@@ -25,11 +25,11 @@
 
         // without regex and test validate the string
         let stringTeste = "Pedro Remoaldo1";
-        let valido=true;
-        let caracteresPermitidos="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
+        let valido = true;
+        let caracteresPermitidos = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
         for (let letra of stringTeste) {
             if (!caracteresPermitidos.includes(letra)) {
-                valido=false;
+                valido = false;
                 break;
             }
         }
@@ -38,7 +38,7 @@
         } else {
             console.log("Nome com caracteres inválidos!");
         }
- 
+
         function hasNumbers(str) {
             let string = String(str);
             for (const char of string) {
@@ -52,14 +52,202 @@
 
 
         // exercicio 3  ask the uyser a number, shows the sum of the numbers between 1 and the number provided by the user 
-/*
-        let numero = prompt("Introduza um número:");
-        alert("Valor não autorizado!");
-        let soma = 0;
-        for (let i = 1; i <= numero; i++) {
-            soma += i;
+
+        function validaint() {
+            let valido = true;
+            let numero = prompt("Introduza um número:");
+            for (let letra of numero) {
+                let codigo = letra.charCodeAt(0);
+                if (codigo < 48 || codigo > 57) {
+                    valido = false;
+                    break;
+                }
+            }
+            if (valido) {
+                alert(somaNumerosAte(numero));
+            } else {
+                alert("Valor não autorizado!");
+            }
         }
-        console.log(soma);*/
+
+        function somaNumerosAte(numero) {
+            let soma = 0;
+            for (let i = 1; i <= numero; i++) {
+                soma += i;
+            }
+            return soma;
+        }
+
+        // exercicio 4 dada uma variavel com um ano verificar se é bisexto  melhorar com operador ternário
+        let ano = 2004;
+        if (ano % 4 === 0) {
+            if (ano % 100 === 0) {
+                if (ano % 400 === 0) {
+                    console.log("É bissexto!");
+                } else {
+                    console.log("Não é bissexto!");
+                }
+            } else {
+                console.log("É bissexto!");
+            }
+        } else {
+            console.log("Não é bissexto!");
+        }
+
+        // exercicio 5 numbers de 1 a 100 multiple of 3 fizz multiple of 5 buzz if the number is multiple of both 3 and 5 FizzBuzz
+        function fizzBuzz() {
+            for (let i = 1; i <= 100; i++) {
+                if (i % 3 === 0 && i % 5 === 0) {
+                    console.log("FizzBuzz");
+                } else if (i % 3 === 0) {
+                    console.log("Fizz");
+                } else if (i % 5 === 0) {
+                    console.log("Buzz");
+                } else {
+                    console.log(i);
+                }
+            }
+        }
+
+        // exercicio 6 calcular os numeros primos entre 1 e uma variavel
+        let limite = 30
+        function primos() {
+            for (let i = 1; i <= limite; i++) {
+                let primo = true;
+                for (let j = 2; j < i; j++) {
+                    if (i % j === 0) {
+                        primo = false;
+                        break;
+                    }
+                }
+                if (primo) {
+                    console.log(i);
+                }
+            }
+        }
+
+        // exercicio 7 dado uma string validar, se não é vazia, se tem minimo 3 caracteres e o primeiro caracter ser A ou B
+
+        let valor1 = ""; // false
+        let valor2 = "Primavera"; // false
+        let valor3 = "Be"; // false;
+        let valor4 = "Amesterdão"; // true
+        let valor5 = "Benin"; // true
+
+        function validaString(string) {
+            if (string.length >= 3 && string[0] === "A" || string[0] === "B") {
+                console.log(true);
+            } else {
+                console.log(false);
+            }
+        }
+
+        // exercicio 8 , simulate repeat a string given a number of times
+        let repeticoes = 4;
+        let texto = "Flag";
+        console.log(texto.repeat(repeticoes));
+
+        let words = '';
+        for (let i = 0; i < repeticoes; i++) {
+            words += texto
+        }
+        console.log(words);
+
+        //exercicio 9, simular methodo trim para remover espaços em branco
+        let frase = "  Frase com espaços no início e no fim  ";
+        console.log(frase.trim());
+
+        function removeEspacos(str) {
+            return str.slice(str.search(/\S/), str.search(/\S\s*$/) + 1);
+        }
+
+        console.log(removeEspacos(frase));
+
+        // exercicio 10 extract file extension from string
+        let ficheiro = "teste.txt";
+        let ficheiro2 = "teste.js";
+        console.log(ficheiro.slice(ficheiro.lastIndexOf(".")));
+        console.log(ficheiro2.slice(ficheiro2.lastIndexOf(".")));
+
+
+        //************************ ARRAYS
+
+        // exercicio 11 criar array apenas com notas positivas
+        let notas = [12, 18, -5, -9, 11, 10, -8, 0, 17];
+
+        function notasPositivas(notas) {
+            let notasPositivas = [];
+            for (let i = 0; i < notas.length; i++) {
+                if (notas[i] >= 10) {
+                    notasPositivas.push(notas[i]);
+                }
+            }
+            return notasPositivas;
+        }
+
+        console.log(notasPositivas(notas));
+
+        // exercicio 12 criar uma chave aleatoria de euro milhoes 5 numeros e 2 estrelas , numeros entre 1-50 e estrelas 1-12, ordernar no fim
+
+        function random() {
+            let numeros = [];
+            let estrelas = [];
+            for (let i = 0; i < 5; i++) {
+                numeros.push(Math.floor(Math.random() * 50) + 1);
+            }
+            for (let i = 0; i < 2; i++) {
+                estrelas.push(Math.floor(Math.random() * 12) + 1);
+            }
+            numeros.sort((a, b) => a - b);
+            estrelas.sort((a, b) => a - b);
+            console.log(numeros);
+            console.log(estrelas);
+        }
+
+        random();
+        // exercicio 13 remover duplicados
+        let arrayDuplicados = [12, 6, 3, 12, 8, 6, 5];
+        let novoArray = [];
+        for (let i = 0; i < arrayDuplicados.length; i++) {
+            if (!novoArray.includes(arrayDuplicados[i])) {
+                novoArray.push(arrayDuplicados[i]);
+            }
+        }
+        console.log(novoArray);
+
+        // exercicio 14 How to: Work at Google — Example Coding/Engineering Interview https://www.youtube.com/watch?v=XKu_SEDAykw&t=157s
+        let arrayGoogle = [1, 2, 3, 9];
+        let arrayGoogle1 = [1, 2, 4, 4];
+        let soma = 8;
+
+        function encontraParComSoma(array, soma) {
+            for (let i = 0; i < array.length; i++) {
+                for (let j = i + 1; j < array.length; j++) {
+                    if (array[i] + array[j] === soma) {
+                        return [array[i], array[j]];
+                    }
+                }
+            }
+            return null;
+        }
+
+        let par = encontraParComSoma(arrayGoogle, soma);
+        if (par !== null) {
+            console.log(`Par encontrado: ${par[0]} + ${par[1]} = ${soma}`);
+        } else {
+            console.log(`Nenhum par encontrado no array ${arrayGoogle} que some ${soma}.`);
+        }
+
+        par = encontraParComSoma(arrayGoogle1, soma);
+        if (par !== null) {
+            console.log(`Par encontrado: ${par[0]} + ${par[1]} = ${soma}`);
+        } else {
+            console.log(`Nenhum par encontrado no array ${arrayGoogle1} que some ${soma}.`);
+        }
+
+        // binary search
+        // complementos ??
+        // pesquisa por pares de valoers minimos e maximos
 
     </script>
 
