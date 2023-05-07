@@ -8,6 +8,7 @@ h1 {
     color: #3C368C;
     font-size: 2.5rem;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 header {
@@ -25,7 +26,69 @@ header {
     color: #0075be;
 }
 
+#banner {
+    background-image: url(../imagens/fundoBanner.jpg);
+    background-color: #f5f5f5;
+    height: 500px;
+}
 
+#banner img {}
+
+#mission {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+#mission article {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#mission .missionbanner {
+    flex: 1;
+}
+
+#mission .missioncontent {
+    flex: 2;
+    padding: 0 20px;
+}
+
+#mission img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#mission a {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #0075be;
+}
+
+#mission a:hover {
+    text-decoration: underline;
+}
+
+#mission article h2 {
+    color: #252525;
+}
+
+#mission article p {
+    color: #7d7d7d;
+}
+
+#equipa{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 
 #team {
     display: flex;
@@ -33,31 +96,36 @@ header {
     justify-content: center;
     align-items: center;
     gap: 30px;
-  }
-  
-  .user {
+
+}
+
+.user {
     position: relative;
     width: 300px;
     height: 300px;
     overflow: hidden;
-    border-radius: 50%; /* make the user element a circle */
-    transition: width 0.2s ease-out, border-radius 0.2s ease-out; /* add a transition for the circle-to-square effect */
-  }
-  
-  .user img {
+    border-radius: 50%;
+    /* make the user element a circle */
+    transition: width 0.2s ease-out, border-radius 0.2s ease-out;
+    /* add a transition for the circle-to-square effect */
+}
+
+.user img {
     border-radius: 50%;
     display: block;
     width: 100%;
     height: auto;
     transition: transform 0.2s ease-out;
-  }
-  
-  .user:hover {
-    width: 300px; /* resize the user element on hover */
-    border-radius: 0; /* remove the border-radius to make it a square */
-  }
-  
-  .teamtext {
+}
+
+.user:hover {
+    width: 300px;
+    /* resize the user element on hover */
+    border-radius: 0;
+    /* remove the border-radius to make it a square */
+}
+
+.teamtext {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -67,16 +135,17 @@ header {
     color: #fff;
     opacity: 0;
     transition: opacity 0.2s ease-out;
-  }
-  
-  .user:hover .teamtext {
-    opacity: 1;
-  }
-  
+}
 
-  
+.user:hover .teamtext {
+    opacity: 1;
+}
+
+
+
 
 #offer {
+    margin-top: 50px;
     margin-bottom: 50px;
     text-align: center;
 }
@@ -131,7 +200,8 @@ footer h1 {
     margin-bottom: 15px;
 
 }
-footer li{
+
+footer li {
     padding-top: 10px;
 }
 
@@ -144,3 +214,16 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+
+@media (max-width: 800px) {
+    #mission {
+      flex-direction: column;
+    }
+    .missionbanner img {
+      max-width: 100%;
+    }
+    .missioncontent {
+      padding: 1em;
+    }
+  }
