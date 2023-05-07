@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Exemplo 1</title>
+</head>
+<body>
+
+    <h1>Javascript</h1>
+    <script>
+        // javascript é case sensitive e use camel casing
+        // declaração de variaveis
+        let nome = 'João'; //declarar e inicializar a variavel
+
+        let localidade; //undefined
+        localidade = 'São Paulo';
+
+        let tamanho= nome.length; //usa dot notation
+
+        // for (let i = 0; i < nome.length; i++) {
+        //     console.log(nome[i]);
+        // }
+
+        // for (let i = 0; i < nome.length; i++) {
+        //     console.log(nome.charAt(i));
+        // }        
+
+        // let i = 0;
+        // while (i < nome.length) {
+        // console.log(nome[i]);
+        // i++;
+        // }
+
+        // melhor codigo e mais legivel
+        for (let char of nome) {
+            console.log(char);
+        }
+
+        //mostrar as letras por ordem inversa + adiciona ao inico e += adiciona ao fim
+        let invertName = "";
+        for (let char of nome) {
+        invertName = char += invertName;
+        }
+        console.log(invertName);
+
+        let inversa = nome.split("").reverse().join("");
+        console.log(inversa);
+    </script>
+    
+</body>
+</html>

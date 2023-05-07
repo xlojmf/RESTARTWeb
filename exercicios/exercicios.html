@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+
+        //Sem utilizar expressões regulares determinar se a string de teste tem ou não caracteres válidos: exer1
+
+        // ====================== regex ======================
+
+        let teste = "Pedro Remoaldo1";
+        let regex = /^[A-Za-z ]*$/;
+        console.log(regex.test(teste));
+
+        // without regex and test validate the string
+        let stringTeste = "Pedro Remoaldo1";
+        let valido=true;
+        let caracteresPermitidos="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
+        for (let letra of stringTeste) {
+            if (!caracteresPermitidos.includes(letra)) {
+                valido=false;
+                break;
+            }
+        }
+        if (valido) {
+            console.log("Nome com caracteres válidos!");
+        } else {
+            console.log("Nome com caracteres inválidos!");
+        }
+ 
+        function hasNumbers(str) {
+            let string = String(str);
+            for (const char of string) {
+                if (!isNaN(char) && char !== " ") {
+                    return true;
+                }
+            }
+            return false;
+        }
+        console.log(hasNumbers(teste));
+
+
+        // exercicio 3  ask the uyser a number, shows the sum of the numbers between 1 and the number provided by the user 
+/*
+        let numero = prompt("Introduza um número:");
+        alert("Valor não autorizado!");
+        let soma = 0;
+        for (let i = 1; i <= numero; i++) {
+            soma += i;
+        }
+        console.log(soma);*/
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - Exemplo 3 Strings</title>
+</head>
+
+<body>
+
+    <script>
+        // forma tradicional de concatenar strings +
+        let primeiroNome = "Jose";
+        let ultimoNome = "Ferraz";
+        let nome = primeiroNome + " " + ultimoNome;
+        console.log(nome);
+
+        let total = 2 + 6 + "7";//87
+        console.log(total);
+        let total2 = "2" + 6 + 7;//267
+        console.log(total2);
+
+        // conversao explicita, somos nos que a fazemos
+        // Number built in object of js
+        let total3 = Number("2") + Number("6") + Number("7");//15
+        console.log(total3);
+
+        //parseInt apenas para numeros inteiros
+        let total4 = parseInt("2") + parseInt("6") + parseInt("7");//15
+        console.log(total4);
+
+        //expert mode prefixar com um + ara converter string para um numero
+        let total5 = 2 + 6 + +"7";//15
+        console.log(total5);
+
+
+        // template strings
+        let nomeCompleto = `${primeiroNome} ${ultimoNome}`;
+        console.log(nomeCompleto);
+
+        let a = 1;
+        let b = "teste";
+        console.log(`${a * 6} ${b.toUpperCase()}`);
+
+        let texto = `
+        exemplo de
+        texto em 
+        linhas diferentes       
+        `;
+
+        let outroNome = "Antonio Figueiredo";
+        //show last char from outroNome
+        console.log(outroNome[outroNome.length - 1]);
+        console.log(outroNome.charAt(outroNome.length - 1));
+
+        //indexOf retorna a posicao da primeira ocorrencia caso nao encontre retorna -1
+        let posicao = outroNome.indexOf("o");//3
+        console.log(posicao);
+
+        // count the number of occorence of a char on a string using the lower case char   
+        let count1 = outroNome.split("o").length - 1;
+        console.log(count1);
+
+        // count the number of occorence on a string of an upper case char using the lower case char 
+        let count2 = outroNome.split("f".toUpperCase()).length - 1;
+        console.log(count2);
+
+        // includes retorna true ou false
+        let count3 = outroNome.includes("F"); // true
+        console.log(count3);
+        // search for a char on a string
+        let count4 = outroNome.search("o"); // 3
+        console.log(count4);
+
+        // extract a substring from a string 
+        let count5 = outroNome.substring(0, 3);
+        console.log(count5);
+
+        // extract a substring from a string with slice 
+        // podemos usar o slice para retornar apenas uma parte da string inclusive com -5 para ir buscar os ultimos 5 caracteres p.e
+        let count6 = outroNome.slice(0, 3);
+        console.log(count6);
+
+        // string.slice(posicao_inicial, posição_final)
+        console.log(outroNome.slice(2, 5)); // tón
+        console.log(outroNome.slice(5)); // io Figueiredo
+        console.log(outroNome.slice(5, outroNome.length)); // io Figueiredo
+        // com o slice podemos utilizar valores negativos que contam a partir do fim
+        console.log(outroNome.slice(-5)); // iredo
+
+        // startswith and endwith para retornar true ou false nas strings
+
+        // ====================== regex ======================
+
+        let teste = "Pedro Remoaldo1";
+        let regex = /^[A-Za-z ]*$/;
+        console.log(regex.test(teste));
+
+        // without regex and test validate the string
+        function hasNumbers(str) {
+            let string = String(str);
+            for (const char of string) {
+                if (!isNaN(char) && char !== " ") {
+                    return true;
+                }
+            }
+            return false;
+        }
+        console.log(hasNumbers(teste));
+        
+
+
+    </script>
+</body>
+
+</html>
