@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom 1 - Javascript</title>
+
+    <style>
+        #collapseContent {
+            display: none;
+        }
+    </style>
+
+
+</head>
+<body>
+    
+    <h1>teste de dom</h1>
+
+        <p id="conteudo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit reiciendis, rem nulla nam non illo deleniti, excepturi placeat iusto asperiores, ipsa qui delectus culpa dolores aut facere mollitia pariatur eaque.</p>
+        <p><button id="BtMudaTexto">ola mundo!</button>́</p>
+
+
+
+        <button id="btCollapse" onclick="toggleCollapse()">Mostrar Collapse</button>
+        <p id="collapseContent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit reiciendis, rem nulla nam non illo deleniti, excepturi placeat iusto asperiores, ipsa qui delectus culpa dolores aut facere mollitia pariatur eaque.</p>
+    <script src="dom1.js"></script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript - DOM 1</title>
+        <style>
+            .destaque {
+                color: red;
+                background-color: cyan;
+            }
+            #conteudoCollapse {
+                border: 1px solid black;
+                padding: 20px;
+                width: 300px;
+                /* margin-top: -16px; */
+                margin-top: 0;
+                display: none;
+            }
+            #parButton {
+                margin-bottom: 0;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h1>Teste de DOM</h1>
+        <p id="conteudo">Lorem ispum sadljasldk asdasld ljkas dljasdl ajslkdja lskdj laksjdlasjdlka sjd</p>
+        <!-- <p><button id="btMudaTexto" type="button" onclick="..."></button> -->
+        <p><button id="btMudaTexto" type="button">Muda texto</button></p>
+​
+        <p id="parButton"><button id="btCollapse" type="button">Mostrar collapse</button></p>
+        <p id="conteudoCollapse">Lorem ispum sadljasldk asdasld ljkas dljasdl ajslkdja lskdj laksjdlasjdlka sjd</p>
+        <p>----------------</p>
+        <script src="dom1.js"></script>
+    </body>
+</html>

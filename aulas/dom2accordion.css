@@ -1,0 +1,36 @@
+.accordion {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .accordion-section {
+    border: 1px solid #ccc;
+  }
+  
+  .accordion-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .accordion-title:hover {
+    background-color: #f4f4f4;
+  }
+  
+  .accordion-title::after {
+    content: "+";
+    font-size: 18px;
+  }
+  
+  .accordion-title.active::after {
+    content: "-";
+  }
+  
+  .accordion-content {
+    display: none;
+    padding: 10px;
+  }
+  
