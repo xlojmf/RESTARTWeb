@@ -1,0 +1,17 @@
+/*thumbnails*/
+
+#galeria {
+text-align: center;    
+
+cursor: pointer;
+}
+
+#galeria > img {
+width: 200px;
+opacity: 0.5;
+}
+
+#galeria > img:hover {
+opacity: 1;
+}
+
