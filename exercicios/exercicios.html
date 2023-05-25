@@ -249,6 +249,95 @@
         // complementos ??
         // pesquisa por pares de valoers minimos e maximos
 
+
+        //exercicio 18
+        function remove_elements(array, elements_to_remove) {
+            // Loop through the elements to remove
+            for (const element of elements_to_remove) {
+                // Find the index of the element in the array
+                const index = array.indexOf(element);
+
+                // If the element is found, remove it from the array
+                if (index !== -1) {
+                    array.splice(index, 1);
+                }
+            }
+
+            // Return the modified array
+            return array;
+        }
+
+        const array = [1, 2, 3, 4, 5];
+        const elements_to_remove = [2, 4];
+
+        const new_array = remove_elements(array, elements_to_remove);
+
+        console.log(new_array); // [1, 3, 5]
+
+        // exercicio 20
+        function palavraAEncontrar(sentence, letter) {
+            // Convert the sentence to an array of characters
+            const characters = sentence.toLowerCase().split('');
+
+            // Count the number of occurrences of the letter, both upper and lowercase
+            let count = 0;
+            for (const character of characters) {
+                if (character === letter || character === letter.toUpperCase()) {
+                    count++;
+                }
+            }
+
+            // Return the number of occurrences
+            return count;
+        }
+
+        const sentence = 'Bastante bom que tu es';
+        const letter = 'b';
+
+        const count = palavraAEncontrar(sentence, letter);
+
+        console.log(count); // 2
+
+        //exercicio 22
+        let persons = [
+            { nome: "Pedro Remoaldo", localidade: "Ermesinde" },
+            { nome: "Luísa Xavier", localidade: "Lisboa" },
+            { nome: "Mário Simões", localidade: "Aveiro" },
+            { nome: "Elisabete Miguel", localidade: "Braga" },
+            { nome: "Joana Castro", localidade: "Lisboa" },
+            { nome: "Guilherme Silveira", localidade: "Lisboa" },
+            { nome: "Micaela Rodrigues", localidade: "Braga" },
+            { nome: "Pedro Oliveira", localidade: "Ermesinde" }
+        ];
+
+        let locationCount = persons.reduce((acc, person) => {
+            let location = person.localidade;
+            if (acc[location]) {
+                acc[location] += 1;
+            } else {
+                acc[location] = 1;
+            }
+            return acc;
+        }, {});
+
+        console.log(locationCount);
+
+        let lastPersonFromLisboa = null;
+
+        for (let i = persons.length - 1; i >= 0; i--) {
+            if (persons[i].localidade === "Lisboa") {
+                lastPersonFromLisboa = persons[i];
+                break;
+            }
+        }
+
+        console.log(lastPersonFromLisboa.nome);
+
+        let lisboaPersons = persons.filter(person => person.localidade === "Lisboa");
+        let lastPersonFromLisboa1 = lisboaPersons[lisboaPersons.length - 1];
+
+        console.log(lastPersonFromLisboa1.nome);
+
     </script>
 
 
